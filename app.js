@@ -2,6 +2,7 @@
  const app = express();
  const bodyParser = require('body-parser');
  const mongoose = require('mongoose');
+ 
 const { model } = require('./models/User');
 const { Router } = require('express');
 
