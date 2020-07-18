@@ -1,0 +1,59 @@
+<%- include('./layout/header.ejs') %>
+
+    <div class="book">
+    <h2>Book your appointment!</h2>
+    </div>
+   
+    <form action="/appointments" method="post">
+            <div class="container p-3">
+              <div class="row">
+                <div class="col m-3 p-3">
+                  <input type="text" class="form-control" placeholder="First name" name="firstname"
+                  value="<%= typeof firstname!= 'undefined' ? firstname: '' %>"
+                  />
+                </div>
+                <div class="col m-3 p-3">
+                  <input type="text" class="form-control" placeholder="Last name" name="lastname"
+                  value="<%= typeof lastname != 'undefined' ? lastname: '' %>"
+                  />
+                </div>
+              </div>
+              <div class="form-group m-3">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"
+                value="<%= typeof email != 'undefined' ? email: '' %>"
+                />
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+              <div class="form-group m-3">
+                <label for="exampleInputPassword1">Phone no</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="phonenumber"
+                value="<%= typeof phonenumber != 'undefined' ? phonenumber: '' %>"
+                />
+              </div>
+              <div class="form-group m-3">
+                <label for="exampleInputPassword1">Age</label>
+                <input type="text" class="form-control" id="exampleInputPassword1" name="age"
+                value="<%= typeof age != 'undefined' ? age: '' %>"
+                />
+              </div>
+              <div class="form-group m-3">
+                <label for="exampleInputPassword1">Specalisation</label>
+                <select class="form-control" name="specialisation"
+                value="<%= typeof specialisation != 'undefined' ? specialisation: '' %>">
+                  <option>Select</option>
+                  <option>Child Care</option>
+                  <option>Dental</option>
+                  <option>Dermatologist</option>
+                  <option>Mental Care</option>
+                  <option>Aged care</option>
+                  <option>Diabetics</option>
+                </select>
+              </div>
+              <div class="form-group m-3">
+              <button type="submit" class="btn btn-success">Submit</button>
+              </div>
+              
+            </div>
+    </form>
+<%- include('./layout/footer.ejs') %>
